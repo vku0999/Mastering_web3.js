@@ -1,0 +1,93 @@
+1) What is Web3.js?
+
+Web3.js is a popular JavaScript library that enables developers to interact with the Ethereum blockchain and build decentralized applications (DApps). It serves as a bridge between client-side applications (running in a web browser) and the Ethereum blockchain, allowing developers to read data from the blockchain, send transactions, and interact with smart contracts.
+
+Web3.js provides a range of functionalities, including:
+
+Connecting to the Ethereum network: It allows developers to connect to an Ethereum node (like a local node or an Ethereum service provider) to communicate with the blockchain.
+
+Managing user accounts: Web3.js can handle user accounts and private keys, enabling users to sign transactions securely.
+
+Interacting with smart contracts: It offers methods to interact with Ethereum smart contracts, including calling their functions and sending transactions to update the contract state.
+
+Transaction handling: Web3.js can send transactions to the Ethereum network, allowing users to transfer Ether (ETH) or interact with smart contracts.
+
+Event listening: Developers can listen for events emitted by smart contracts, which can be useful for building real-time applications.
+
+
+2) How Web3 is different from Web2?
+
+Web3 and Web2 refer to two different paradigms of the internet and application development, each with its own set of characteristics and capabilities. 
+Here's a comparison of Web3 and Web2:
+
+1. Centralization vs. Decentralization
+   - Web2: Web2 applications are centralized, meaning that data and control primarily reside on servers owned and operated by specific companies or organizations. Users interact with these centralized servers to access services and data.
+   - Web3: Web3 applications are decentralized, utilizing blockchain technology to remove the need for central authorities. In Web3, data is distributed across a network of nodes (computers) participating in the blockchain, and smart contracts govern the rules and operations of the applications.
+
+2. Ownership and Control of Data
+   - Web2: In Web2, users typically have limited control over their data. When using centralized services, users often grant companies the right to collect, store, and utilize their data.
+   - Web3: Web3 promotes user ownership of data. Blockchain-based applications can give users control over their data, allowing them to share specific information with others without giving up overall ownership.
+
+3. Intermediaries and Trust
+   - Web2: Web2 applications rely on intermediaries (e.g., centralized servers, service providers) to facilitate transactions and maintain trust between parties.
+   - Web3: Web3 applications aim to minimize the need for intermediaries, leveraging the trustless nature of blockchain technology. Smart contracts enforce rules, and transactions are transparently recorded on the blockchain, reducing the need for middlemen.
+
+4. Financial Models
+   - Web2: Web2 applications often rely on traditional financial models, such as advertising revenue, subscription fees, or data monetization, to sustain their operations.
+   - Web3: Web3 applications can introduce innovative financial models through tokenization and decentralized finance (DeFi). Tokens can represent ownership in a project, voting rights, or other utility within the ecosystem.
+
+5. Censorship Resistance
+   - Web2: Since Web2 applications are centralized, the companies running them can exercise control over content and potentially censor or restrict access to certain information.
+   - Web3: Web3 applications, being decentralized, are more resistant to censorship as the data and content are distributed across the blockchain network.
+
+6. Trust and Security
+   - Web2: Users must trust the central authorities running Web2 applications to manage their data and execute transactions honestly.
+   - Web3: Web3 applications rely on cryptographic principles and consensus mechanisms to ensure trust and security without relying on a central authority.
+
+Overall, Web3 represents a shift towards a more decentralized, transparent, and user-centric internet, empowering individuals with ownership and control over their data and financial assets. It leverages blockchain technology to achieve these goals and open up new possibilities for innovative applications and services.
+
+
+3) Demonstrate how to check the account balances with the help of
+Web3.js.?
+
+To check the account balances using Web3.js, we need to connect to an Ethereum node and interact with the blockchain. Here's a step-by-step 
+
+To fire  noide.js up command is node command .. and then start 
+
+1. Install Web3.js: First, make sure we have Node.js installed on our machine. we can then install Web3.js using npm (Node Package Manager) with the following command:
+
+
+npm install web3
+
+
+2. Set up Web3: Create a JavaScript file (e.g., `checkBalances.js`) and import the Web3 library.
+
+javascript
+const Web3 = require('web3');
+
+// Connect to an Ethereum node (Replace with  node provider URL)
+const web3 = new Web3('https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY');
+
+eg - const web3 = new Web3 ('https://mainnet.infura.io/v3/8cd2d46cb634457f956fad146ce41426');
+
+
+3. Check Balances: Now, we can check the balance of an Ethereum account using its address. Here's a function to do that:
+ const address =" address" 
+ web3.eth.getBalance( address, (err,wei))=>{ Balance.web3.utils.fromwei(wei,'ether')};
+
+
+
+4. Call the Function: Finally, call the `checkBalance` function with the Ethereum address we want to check. Here's an example:
+
+
+const addressToCheck = '0xYourEthereumAddress'; // Replace this with the address we want to check
+
+(async () => {
+  const balance = await checkBalance(addressToCheck);
+  if (balance !== null) {
+    console.log(`Balance of ${addressToCheck}: ${balance} ETH`);
+  }
+})();
+
+
+
